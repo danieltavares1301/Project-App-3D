@@ -9,6 +9,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Camera from './src/camera';
 import Relatorios from './src/relatorios';
 
+import {Ionicons, AntDesign} from '@expo/vector-icons';
+
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const HomeTabs = () => {
@@ -24,17 +26,23 @@ const HomeTabs = () => {
       <Tab.Screen
         name="Home"
         component={Home}
+        style
         options={{
           tabBarLabel: 'Home',
           headerShown: false,
+          tabBarIcon: ({color}) => (
+            <Ionicons name="home" size={24} color="#fff" />
+          ),
         }}
       />
       <Tab.Screen
         name="Camera"
         component={Camera}
         options={{
-          tabBarLabel: 'Camera',
-          //tabBarIcon: ({color}) => <Icon name="home" color="#fff" size={26} />,
+          tabBarLabel: 'Ler QR Code',
+          tabBarIcon: ({color}) => (
+            <AntDesign name="qrcode" size={24} color="#fff" />
+          ),
         }}
       />
       <Tab.Screen
@@ -42,6 +50,9 @@ const HomeTabs = () => {
         component={Relatorios}
         options={{
           tabBarLabel: 'Relatorios',
+          tabBarIcon: ({color}) => (
+            <Ionicons name="md-newspaper" size={24} color="#fff" />
+          ),
         }}
       />
     </Tab.Navigator>
