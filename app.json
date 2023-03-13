@@ -3,6 +3,14 @@
   "displayName": "project-app-3d",
   "expo": {
     "name": "project-app-3d",
-    "slug": "project-app-3d"
+    "slug": "project-app-3d",
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ]
+    ]
   }
 }

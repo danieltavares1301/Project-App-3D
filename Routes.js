@@ -6,7 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './src/home';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Camera from './src/camera';
+import Scanner from './src/camera';
 import Relatorios from './src/relatorios';
 
 import {Ionicons, AntDesign} from '@expo/vector-icons';
@@ -36,8 +36,8 @@ const HomeTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Camera"
-        component={Camera}
+        name="Scanner"
+        component={Scanner}
         options={{
           tabBarLabel: 'Ler QR Code',
           tabBarIcon: ({color}) => (
@@ -69,8 +69,8 @@ const Routes = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Camera"
-          component={Camera}
+          name="Scanner"
+          component={Scanner}
           options={{headerShown: false}}
         />
         <Stack.Screen
