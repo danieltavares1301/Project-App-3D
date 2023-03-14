@@ -20,7 +20,7 @@ function Box(props) {
   );
 }
 
-export default function Camera() {
+export default function Objeto3D() {
   return (
     <Canvas>
       <ambientLight />

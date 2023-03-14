@@ -2,12 +2,12 @@ import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import Home from './src/home';
-
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Scanner from './src/camera';
-import Relatorios from './src/relatorios';
+
+import Home from './src/pages/home';
+import Scanner from './src/pages/camera';
+import Relatorios from './src/pages/relatorios';
+import Objeto3D from './src/pages/equipamentos/Objeto3D';
 
 import {Ionicons, AntDesign} from '@expo/vector-icons';
 
@@ -76,6 +76,11 @@ const Routes = () => {
         <Stack.Screen
           name="Relatorios"
           component={Relatorios}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Objeto3D"
+          component={Objeto3D}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
