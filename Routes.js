@@ -1,39 +1,35 @@
 import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import Home from './src/pages/home';
-import Scanner from './src/pages/camera';
-import Relatorios from './src/pages/relatorios';
-import DemoText from './src/pages/equipamentos/DemoText';
+import {EquipamentoTabs} from './src/components/equipamentoTabs';
 
-import {HomeTabs} from './src/components/HomeTabs';
+import {HomeTabs} from './src/components/homeTabs';
 
-const Stack = createNativeStackNavigator();
+const RootStack = createStackNavigator();
 
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home1"
-          component={HomeTabs}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Scanner"
-          component={Scanner}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Relatorios"
-          component={Relatorios}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen name="DemoText" component={DemoText} />
-      </Stack.Navigator>
+      <RootStack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerStyle: {height: 40},
+        }}>
+        <RootStack.Group>
+          <RootStack.Screen
+            name="Home1"
+            component={HomeTabs}
+            options={{headerShown: false}}
+          />
+          <RootStack.Screen
+            name="EquipamentoTabs"
+            component={EquipamentoTabs}
+            options={{title: 'Equipamento'}}
+          />
+        </RootStack.Group>
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };
