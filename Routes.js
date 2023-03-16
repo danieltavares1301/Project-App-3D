@@ -7,7 +7,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './src/pages/home';
 import Scanner from './src/pages/camera';
 import Relatorios from './src/pages/relatorios';
-import Objeto3D from './src/pages/equipamentos/Objeto3D';
+import Equipamentos from './src/pages/equipamentos';
 
 import {Ionicons, AntDesign} from '@expo/vector-icons';
 
@@ -78,11 +78,7 @@ const Routes = () => {
           component={Relatorios}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="Objeto3D"
-          component={Objeto3D}
-          options={{headerShown: false}}
-        />
+        <Stack.Screen name="Equipamentos" component={Equipamentos} />
       </Stack.Navigator>
     </NavigationContainer>
   );
