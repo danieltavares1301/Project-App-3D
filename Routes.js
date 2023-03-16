@@ -7,7 +7,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './src/pages/home';
 import Scanner from './src/pages/camera';
 import Relatorios from './src/pages/relatorios';
-import Equipamentos from './src/pages/equipamentos';
+import DemoText from './src/pages/equipamentos/DemoText';
 
 import {Ionicons, AntDesign} from '@expo/vector-icons';
 
@@ -78,7 +78,7 @@ const Routes = () => {
           component={Relatorios}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Equipamentos" component={Equipamentos} />
+        <Stack.Screen name="DemoText" component={DemoText} />
       </Stack.Navigator>
     </NavigationContainer>
   );
