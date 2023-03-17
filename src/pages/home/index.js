@@ -10,12 +10,7 @@ export default function Home() {
       {dados.map(obj => {
         return (
           <TouchableOpacity
-            onPress={() =>
-              navigation.navigate('EquipamentoTabs', {
-                nameObj: obj.nameObj,
-                urlObj: obj.urlObj,
-              })
-            }
+            onPress={() => navigation.navigate('EquipamentoTabs', obj)}
             style={{
               width: '90%',
               height: 40,
