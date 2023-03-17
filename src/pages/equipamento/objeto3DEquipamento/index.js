@@ -1,6 +1,7 @@
 import React from 'react';
-import {Text} from 'react-native';
+import WebView from 'react-native-webview';
 
-export default function Objeto3DEquipamento() {
-  return <Text>Objeto3DEquipamento</Text>;
+export default function Objeto3DEquipamento({route}) {
+  const {nameObj, urlObj} = route.params;
+  return <WebView source={{uri: `${urlObj}`}} />;
 }

@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {Text, View, StyleSheet, Button} from 'react-native';
 import {BarCodeScanner} from 'expo-barcode-scanner';
+import {dados} from '../../services/dados';
+import {useNavigation} from '@react-navigation/native';
 
 export default function Scanner() {
+  const navigation = useNavigation();
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
@@ -17,7 +20,13 @@ export default function Scanner() {
 
   const handleBarCodeScanned = ({type, data}) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    const newDados = dados.filter(item => item.nameObj == data);
+    if (newDados.length > 0)
+      navigation.navigate('EquipamentoTabs', {
+        nameObj: newDados[0].nameObj,
+        urlObj: newDados[0].urlObj,
+      });
+    alert(`${data}`);
   };
 
   if (hasPermission === null) {

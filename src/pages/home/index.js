@@ -24,7 +24,7 @@ export default function Home() {
               borderWidth: 0.5,
               marginBottom: 5,
             }}
-            id={obj.id}>
+            key={obj.id}>
             <Text
               style={{
                 textAlign: 'center',
