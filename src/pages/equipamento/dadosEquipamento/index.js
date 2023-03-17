@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Text, Button, View} from 'react-native';
-import ItemInfo from '../../../components/itemInfo';
+import {Text, Button, View, ScrollView} from 'react-native';
+import CardInfo from '../../../components/cardInfo';
 
 export default function DadosEquipamento({route}) {
   const {
@@ -15,13 +15,17 @@ export default function DadosEquipamento({route}) {
     servicosRestantes,
   } = route.params;
 
-  console.log(route.params);
-
   return (
-    <View style={{padding: 10}}>
-      <Text style={{fontSize: 20}}>{nameObj}</Text>
-      <ItemInfo />
+    <ScrollView style={{padding: 10, marginBottom: 10}}>
+      <CardInfo title={'Nome do equipamento'} body={'Equipamento abc'} />
+      <CardInfo title={'TAG'} body={TAG} />
+      <CardInfo title={'Item ou Cod. Est.'} body={item} />
+      <CardInfo title={'Localidade'} body={localidade} />
+      <CardInfo title={'Data de entrada'} body={dataEntrada} />
+      <CardInfo title={'Data de saída'} body={dataSaida} />
+      <CardInfo title={'Contato do responsável'} body={contatoResponsável} />
+      <CardInfo title={'Serviços a serem feitos'} body={servicosRestantes} />
       {/* <WebView source={{uri: 'http://192.168.1.4:3000/'}} /> */}
-    </View>
+    </ScrollView>
   );
 }
