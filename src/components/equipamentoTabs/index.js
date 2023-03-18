@@ -14,6 +14,8 @@ export const EquipamentoTabs = ({route}) => {
       screenOptions={{
         tabBarLabelStyle: {fontSize: 12},
         tabBarItemStyle: {width: 100},
+        tabBarAndroidRipple: {borderless: false},
+        swipeEnabled: false,
       }}>
       <Tab.Screen
         name="dados"
