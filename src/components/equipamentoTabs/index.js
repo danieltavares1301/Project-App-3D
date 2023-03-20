@@ -22,7 +22,7 @@ export const EquipamentoTabs = ({route}) => {
         initialParams={route.params}
       />
       <Tab.Screen
-        name="lista"
+        name="peças"
         component={ListaDePecasEquipamento}
         initialParams={route.params}
       />

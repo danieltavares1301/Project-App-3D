@@ -8,7 +8,7 @@ export default function DataTableCmp() {
       style={{
         paddingHorizontal: 20,
       }}>
-      <DataTable style={{marginLeft: -5}}>
+      <DataTable>
         <DataTable.Header>
           <DataTable.Title
             textStyle={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
