@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from '../../pages/home';
@@ -23,7 +22,6 @@ export const HomeTabs = () => {
       <Tab.Screen
         name="Home"
         component={Home}
-        style
         options={{
           tabBarLabel: 'Home',
           headerShown: false,

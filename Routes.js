@@ -1,13 +1,15 @@
 import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {EquipamentoTabs} from './src/components/equipamentoTabs';
 
 import {HomeTabs} from './src/components/homeTabs';
 
-const RootStack = createStackNavigator();
+import MontagemEquipamento from './src/pages/equipamento/montagemEquipamento';
+
+const RootStack = createNativeStackNavigator();
 
 const Routes = () => {
   return (
@@ -27,6 +29,10 @@ const Routes = () => {
             name="EquipamentoTabs"
             component={EquipamentoTabs}
             options={{title: 'Equipamento'}}
+          />
+          <RootStack.Screen
+            name="MontagemEquipamento"
+            component={MontagemEquipamento}
           />
         </RootStack.Group>
       </RootStack.Navigator>
