@@ -15,6 +15,7 @@ export const EquipamentoTabs = ({route}) => {
         tabBarLabelStyle: {fontSize: 12},
         tabBarItemStyle: {width: 100},
         tabBarAndroidRipple: {borderless: false},
+        swipeEnabled: false,
       }}>
       <Tab.Screen
         name="dados"
@@ -36,7 +37,6 @@ export const EquipamentoTabs = ({route}) => {
         name="3D"
         component={Objeto3DEquipamento}
         initialParams={route.params}
-        options={{swipeEnabled: false}}
       />
     </Tab.Navigator>
   );
