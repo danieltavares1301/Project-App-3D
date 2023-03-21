@@ -2,7 +2,7 @@ import * as React from 'react';
 import {View} from 'react-native';
 import {DataTable} from 'react-native-paper';
 
-export default function DataTableCmp() {
+export default function DataTableCmp({lista}) {
   return (
     <View
       style={{
@@ -21,20 +21,12 @@ export default function DataTableCmp() {
           </DataTable.Title>
         </DataTable.Header>
 
-        <DataTable.Row>
-          <DataTable.Cell>Parafuso 1</DataTable.Cell>
-          <DataTable.Cell numeric>4</DataTable.Cell>
-        </DataTable.Row>
-
-        <DataTable.Row>
-          <DataTable.Cell>Arruelas</DataTable.Cell>
-          <DataTable.Cell numeric>4</DataTable.Cell>
-        </DataTable.Row>
-
-        <DataTable.Row>
-          <DataTable.Cell>Rolamentos</DataTable.Cell>
-          <DataTable.Cell numeric>2</DataTable.Cell>
-        </DataTable.Row>
+        {lista.map(peca => (
+          <DataTable.Row key={peca.id}>
+            <DataTable.Cell>{peca.item}</DataTable.Cell>
+            <DataTable.Cell numeric>{peca.qtd}</DataTable.Cell>
+          </DataTable.Row>
+        ))}
       </DataTable>
     </View>
   );

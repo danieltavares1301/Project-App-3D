@@ -11,6 +11,11 @@ export const dados = [
     contatoResponsável: '(98) 9 1234-5678',
     servicosRestantes:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+    listaPecas: [
+      {id: 1, item: 'Parafuso 1', qtd: 4},
+      {id: 2, item: 'Arruelas', qtd: 4},
+      {id: 3, item: 'Rolamentos', qtd: 2},
+    ],
   },
   {
     id: 2,
