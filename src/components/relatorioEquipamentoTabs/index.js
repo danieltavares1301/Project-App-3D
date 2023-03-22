@@ -69,7 +69,11 @@ const RelatorioEquipamentoTabs = () => {
       screenOptions={{
         swipeEnabled: false,
       }}>
-      <Tab.Screen name="Montagem" component={MontagemEquipamento} />
+      <Tab.Screen
+        name="Montagem"
+        component={MontagemEquipamento}
+        options={{}}
+      />
       <Tab.Screen name="Desmontagem" component={DesmontagemEquipamento} />
       <Tab.Screen name="Peritagem" component={PeritagemEquipamento} />
       <Tab.Screen name="Inspeção" component={InspecaoEquipamento} />
