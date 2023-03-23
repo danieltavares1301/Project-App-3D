@@ -5,14 +5,22 @@ import {Checkbox} from 'react-native-paper';
 const styles = StyleSheet.create({
   card: {borderWidth: 0.2, borderRadius: 10, marginBottom: 10},
   cardHeader: {
+    display: 'flex',
+    flexDirection: 'row',
     backgroundColor: '#d0d0d0',
     borderTopLeftRadius: 18,
     borderTopRightRadius: 18,
     borderColor: '#d0d0d0',
     minHeight: 30,
-    padding: 5,
+  },
+  cardNumber: {
+    backgroundColor: '#aaa',
+    borderTopLeftRadius: 18,
+    borderTopRightRadius: 0,
+    minWidth: 30,
   },
   cardTitle: {
+    padding: 5,
     fontSize: 18,
     fontWeight: '600',
     marginLeft: 10,
@@ -76,6 +84,7 @@ const CheckBoxes = ({
 };
 
 export default function CardQuestions({
+  numberQuestion,
   question,
   selectedCheckBox,
   setSelectedCheckBox,
@@ -86,6 +95,9 @@ export default function CardQuestions({
   return (
     <View style={styles.card}>
       <View style={styles.cardHeader}>
+        <View style={styles.cardNumber}>
+          <Text style={styles.cardTitle}>{numberQuestion}</Text>
+        </View>
         <Text style={styles.cardTitle}>{question}</Text>
       </View>
       <View style={styles.cardBody}>
