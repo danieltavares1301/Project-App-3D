@@ -61,7 +61,7 @@ function MyTabBar({state, descriptors, navigation}) {
 
 const Tab = createMaterialTopTabNavigator();
 
-const RelatorioEquipamentoTabs = () => {
+const RelatorioEquipamentoTabs = ({route}) => {
   return (
     <Tab.Navigator
       tabBar={props => <MyTabBar {...props} />}
@@ -70,13 +70,25 @@ const RelatorioEquipamentoTabs = () => {
         swipeEnabled: false,
       }}>
       <Tab.Screen
+        name="Desmontagem"
+        component={DesmontagemEquipamento}
+        initialParams={route}
+      />
+      <Tab.Screen
         name="Montagem"
         component={MontagemEquipamento}
-        options={{}}
+        initialParams={route}
       />
-      <Tab.Screen name="Desmontagem" component={DesmontagemEquipamento} />
-      <Tab.Screen name="Peritagem" component={PeritagemEquipamento} />
-      <Tab.Screen name="Inspeção" component={InspecaoEquipamento} />
+      <Tab.Screen
+        name="Peritagem"
+        component={PeritagemEquipamento}
+        initialParams={route}
+      />
+      <Tab.Screen
+        name="Inspeção"
+        component={InspecaoEquipamento}
+        initialParams={route}
+      />
     </Tab.Navigator>
   );
 };
