@@ -11,6 +11,11 @@
           "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e81665ed-0d3b-46d6-99f7-be9546b97d16"
+      }
+    }
   }
 }

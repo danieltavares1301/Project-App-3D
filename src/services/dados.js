@@ -2,7 +2,7 @@ export const dados = [
   {
     id: 1,
     nameObj: 'DemoText',
-    urlObj: 'http://192.168.1.4:3000/',
+    urlObj: 'https://project-web-3d.vercel.app',
     TAG: '12345',
     item: 'ABC123',
     localidade: 'São Luís - MA',

@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     minHeight: 30,
   },
   cardNumber: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#aaa',
     borderTopLeftRadius: 18,
     borderTopRightRadius: 0,
@@ -21,9 +24,10 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     padding: 5,
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: '600',
-    marginLeft: 10,
+    marginLeft: 0,
+    maxWidth: '93%',
     color: '#3F3F3F',
   },
   cardBody: {
