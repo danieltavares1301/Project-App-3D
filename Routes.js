@@ -8,6 +8,7 @@ import {EquipamentoTabs} from './src/components/equipamentoTabs';
 import {HomeTabs} from './src/components/homeTabs';
 
 import MontagemEquipamento from './src/pages/equipamento/montagemEquipamento';
+import CameraEquip from './src/pages/equipamento/camera';
 
 const RootStack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ const Routes = () => {
             name="MontagemEquipamento"
             component={MontagemEquipamento}
           />
+          <RootStack.Screen name="CameraEquip" component={CameraEquip} />
         </RootStack.Group>
       </RootStack.Navigator>
     </NavigationContainer>

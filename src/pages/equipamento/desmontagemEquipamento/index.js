@@ -2,10 +2,14 @@ import React, {useState} from 'react';
 import {ScrollView, Text} from 'react-native';
 import CardQuestions from '../../../components/cardQuestions';
 import {TextInput, Checkbox, Button} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
 
 /* Seria possível remover quase todas as perguntas e fazê-las serem gerenciadas e respondidas pelo próprio app */
 export default function DesmontagemEquipamento({route}) {
   const {TAG, item} = route.params.params;
+
+  const navigation = useNavigation();
+
   const [selectedCheckBox1, setSelectedCheckBox1] = useState(null);
   const [selectedCheckBox2, setSelectedCheckBox2] = useState(null);
   const [selectedCheckBox3, setSelectedCheckBox3] = useState(null);
@@ -39,7 +43,7 @@ export default function DesmontagemEquipamento({route}) {
       <Button
         mode="contained"
         icon="camera"
-        onPress={() => {}}
+        onPress={() => navigation.navigate('CameraEquip')}
         style={{
           backgroundColor: '#207fc7',
           marginBottom: 10,

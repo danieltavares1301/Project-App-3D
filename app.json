@@ -10,7 +10,8 @@
         {
           "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
         }
-      ]
+      ],
+      ["expo-camera"]
     ],
     "extra": {
       "eas": {
