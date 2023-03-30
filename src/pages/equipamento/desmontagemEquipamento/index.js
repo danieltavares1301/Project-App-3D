@@ -1,21 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import {View, ScrollView, Text} from 'react-native';
+import React, {useState} from 'react';
+import {ScrollView, Text} from 'react-native';
 import CardQuestions from '../../../components/cardQuestions';
 import {TextInput, Checkbox, Button} from 'react-native-paper';
 
 /* Seria possível remover quase todas as perguntas e fazê-las serem gerenciadas e respondidas pelo próprio app */
 export default function DesmontagemEquipamento({route}) {
-  const {
-    nameObj,
-    urlObj,
-    TAG,
-    item,
-    localidade,
-    dataEntrada,
-    dataSaida,
-    contatoResponsável,
-    servicosRestantes,
-  } = route.params.params;
+  const {TAG, item} = route.params.params;
   const [selectedCheckBox1, setSelectedCheckBox1] = useState(null);
   const [selectedCheckBox2, setSelectedCheckBox2] = useState(null);
   const [selectedCheckBox3, setSelectedCheckBox3] = useState(null);
@@ -46,6 +36,18 @@ export default function DesmontagemEquipamento({route}) {
 
   return (
     <ScrollView style={{padding: 10}}>
+      <Button
+        mode="contained"
+        icon="camera"
+        onPress={() => {}}
+        style={{
+          backgroundColor: '#207fc7',
+          marginBottom: 10,
+          width: 100,
+          alignSelf: 'flex-start',
+        }}>
+        FOTO
+      </Button>
       <TextInput
         label="TAG"
         value={TAGInp}
