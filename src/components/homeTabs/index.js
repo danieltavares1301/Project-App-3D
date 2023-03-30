@@ -2,7 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from '../../pages/home';
-import Scanner from '../../pages/camera';
+import Scanner from '../../pages/qr-code';
 import Relatorios from '../../pages/relatorios';
 
 import {Ionicons, AntDesign} from '@expo/vector-icons';
