@@ -1,57 +1,45 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, Image} from 'react-native';
+import {View} from 'react-native';
 import {
   Camera,
-  getCameraPermissionsAsync,
   requestCameraPermissionsAsync,
-  CameraType,
+  getCameraPermissionsAsync,
 } from 'expo-camera';
-/* import * as FileSystem from 'expo-file-system'; */
 
-export default function CameraEquip() {
-  const [hasPermission, setHasPermission] = useState(null);
+export default function CameraEquip({navigation}) {
+  const [cameraPermission, setCameraPermission] = useState(null);
   const [camera, setCamera] = useState(null);
-  const [image, setImage] = useState(null);
+  const [hasPermission, setHasPermission] = useState(null);
 
-  /* async function askCameraPermission() {
-    const {status} = await Camera.requestPermissionsAsync();
+  /* const askCameraPermission = async () => {
+    const { status } = await getCameraPermissionsAsync();
+    setHasPermission(status === "granted");
+  }; */
+  const permisionFunction = async () => {
+    const {status} = await getCameraPermissionsAsync();
     setHasPermission(status === 'granted');
-  } */
+    if (status === false) {
+      await Camera.requestCameraPermissionsAsync();
+    }
 
-  const askCameraPermission = async () => {
-    const {granted} = await getCameraPermissionsAsync();
-    if (!granted) {
-      await requestCameraPermissionsAsync();
+    // here is how you can get the camera permission
+    /* const cameraPermission = Camera.useCameraPermissions();
+    console.log(cameraPermission);
+
+    setCameraPermission(cameraPermission.status === "granted"); */
+
+    if (hasPermission === false) {
+      alert('Permission for media access needed.');
     }
   };
 
   useEffect(() => {
-    askCameraPermission();
+    permisionFunction();
   }, []);
 
-  /* async function takePicture() {
-    if (camera) {
-      const photo = await camera.takePictureAsync({quality: 1});
-      const fileUri = FileSystem.documentDirectory + 'photo.jpg';
-      await FileSystem.copyAsync({from: photo.uri, to: fileUri});
-      setImage(photo.uri);
-    }
-  } */
-
-  if (hasPermission === null) {
-    return <View />;
-  }
-  if (hasPermission === false) {
-    return <Text>Sem acesso à câmera</Text>;
-  }
-
   return (
-    <View style={{flex: 1, width: 500, height: 500}}>
-      <Camera
-        style={{flex: 1, width: 500, height: 500}}
-        type={CameraType.back}
-      />
-      {/* <Button title="Tirar foto" onPress={takePicture} /> */}
+    <View>
+      <Camera ref={ref => setCamera(ref)} style={{height: 500}} />
     </View>
   );
 }
